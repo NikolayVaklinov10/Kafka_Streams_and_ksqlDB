@@ -8,6 +8,7 @@
     <artifactId>Kafka_Streams_and_ksqlDB</artifactId>
     <version>1.0</version>
 
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
         <dependency>
@@ -48,6 +49,29 @@
             <version>1.97.0</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>io.confluent</groupId>-->
+<!--            <artifactId>kafka-streams-avro-serde</artifactId>-->
+<!--            <version>6.1.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.confluent</groupId>-->
+<!--            <artifactId>kafka-avro-serializer</artifactId>-->
+<!--            <version>6.1.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.confluent</groupId>-->
+<!--            <artifactId>kafka-schema-registry-client</artifactId>-->
+<!--            <version>6.1.1</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.10.2</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.avro/avro-maven-plugin -->
         <dependency>
             <groupId>org.apache.avro</groupId>
@@ -68,30 +92,6 @@
             <artifactId>okhttp</artifactId>
             <version>4.9.0</version>
         </dependency>
-
-
-
-
-
-        <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
-        <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro</artifactId>
-            <version>1.10.2</version>
-        </dependency>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </dependencies>
 
