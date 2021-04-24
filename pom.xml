@@ -72,6 +72,14 @@
             <version>1.10.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.typesafe/config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.apache.avro/avro-maven-plugin -->
         <dependency>
             <groupId>org.apache.avro</groupId>
