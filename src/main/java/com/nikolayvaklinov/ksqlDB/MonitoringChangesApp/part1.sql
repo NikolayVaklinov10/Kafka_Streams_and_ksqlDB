@@ -11,12 +11,13 @@ CREATE TABLE titles (
       PARTITIONS=4  /* there will be 4 partitions of it */
       );
 
+/* The following is a NON Persistent stream meaning it will not survive restart of ksqlDB server */
 CREATE STREAM production_changes (
     rowkey VARCHAR KEY,
     uuid INT,
     title_id INT,
     change_type VARCHAR,
-    before season_length,
+    before season_length, /* the custom types created before will be used here */
     after season_length,
     created_at VARCHAR
 ) WITH (
