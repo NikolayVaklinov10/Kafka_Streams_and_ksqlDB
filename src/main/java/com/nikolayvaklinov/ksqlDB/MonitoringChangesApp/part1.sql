@@ -28,9 +28,10 @@ CREATE STREAM production_changes (
     TIMESTAMP_FORMAT='yyyy-MM-dd HH:mm:ss'
 );
 
+/* This is a persistent stream CSAS (CREAT STREAM AS SELECT) */
 CREATE STREAM season_length_changes
 WITH (
-    KAFKA_TOPIC = 'season_length_changes',
+    KAFKA_TOPIC = 'season_length_changes', /* this topic will persist the data */
     VALUE_FORMAT = 'AVRO',
     PARTITIONS = 4,
     REPLICAS = 1
@@ -42,5 +43,5 @@ WITH (
                        after->episode_count AS new_episode_count,
                        created_at
      FROM production_changes
-     WHERE change_type = 'season_length'
+     WHERE change_type = 'season_length' /* filter */
                        EMIT CHANGES ;
