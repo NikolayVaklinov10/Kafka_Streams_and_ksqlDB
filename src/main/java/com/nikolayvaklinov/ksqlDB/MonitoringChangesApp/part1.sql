@@ -1,13 +1,14 @@
 /* The following is a custom type  */
 CREATE TYPE season_length AS STRUCT<season_id INT, episode_count INT> ;
 
+/* Creating a source collection this is a table and the id Primary key is unique for it */
 CREATE TABLE titles (
                         id INT PRIMARY KEY,
                         title VARCHAR
 ) WITH (
-      KAFKA_TOPIC='titles',
-      VALUE_FORMAT='AVRO',
-      PARTITIONS=4
+      KAFKA_TOPIC='titles', /* this is the name of the topic the table will create */
+      VALUE_FORMAT='AVRO', /* the serialization bit of the table */
+      PARTITIONS=4  /* there will be 4 partitions of it */
       );
 
 CREATE STREAM production_changes (
