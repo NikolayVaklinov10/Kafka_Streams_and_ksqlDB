@@ -1,3 +1,4 @@
+/* The following is a custom type  */
 CREATE TYPE season_length AS STRUCT<season_id INT, episode_count INT> ;
 
 CREATE TABLE titles (
