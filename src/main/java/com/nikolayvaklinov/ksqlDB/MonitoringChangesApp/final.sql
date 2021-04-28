@@ -101,3 +101,23 @@ FROM season_length_changes s
          INNER JOIN titles t
                     ON s.title_id = t.id
     EMIT CHANGES ;
+
+CREATE TABLE season_length_change_counts
+    WITH (
+        KAFKA_TOPIC = 'season_length_change_counts',
+        VALUE_FORMAT = 'AVRO',
+        PARTITIONS = 1
+        ) AS
+SELECT
+    title_id,
+    season_id,
+    COUNT(*) AS change_count,
+    LATEST_BY_OFFSET(new_episode_count) AS episode_count
+FROM season_length_changes_enriched
+         WINDOW TUMBLING (
+    SIZE 1 HOUR,
+    RETENTION 2 DAYS,
+    GRACE PERIOD 10 MINUTES
+)
+GROUP BY title_id, season_id
+    EMIT CHANGES ;
