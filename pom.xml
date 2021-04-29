@@ -20,6 +20,10 @@
             <name>Confluent</name>
             <url>https://jenkins-confluent-packages-beta-maven.s3.amazonaws.com/6.2.0-beta201122193350-cp5/3/maven/</url>
         </repository>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
